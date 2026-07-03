@@ -9,6 +9,6 @@ test('Alert',async({page})=>{
  
     await page.locator("//button[@type='submit']").click();
     await page.pause();
-   
+    await page.pause();
  
 })
