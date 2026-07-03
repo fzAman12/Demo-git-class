@@ -1,0 +1,14 @@
+Demo1git
+import{test,expect}from'@playwright/test';
+ 
+test('Alert',async({page})=>{
+    await page.goto('https://www.meghanabus.in/index.html');
+    await page.locator("//a[@href='manage-bookings.html']").click();
+    await page.on('dialog',async(dialog)=>console.log("alear text)"));
+   
+ 
+    await page.locator("//button[@type='submit']").click();
+    await page.pause();
+   
+ 
+})
