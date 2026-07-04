@@ -1,0 +1,26 @@
+import { test, expect } from '@playwright/test';
+
+test('Gmail Login', async ({ page }) => {
+
+    // Open URL
+    await page.goto("https://accounts.google.com/");
+
+    // Find Email Textbox
+    const email = page.locator("#identifierId");
+
+    // Verify Visible
+    await expect(email).toBeVisible();
+
+    // Verify Enabled
+    await expect(email).toBeEnabled();
+
+    // Verify Placeholder
+    await expect(email).toHaveAttribute("aria-label", "Email or phone");
+
+    // Enter Email
+    await email.fill("abc@gmail.com");
+
+    // Verify Entered Value
+    await expect(email).toHaveValue("abc@gmail.com");
+
+});
